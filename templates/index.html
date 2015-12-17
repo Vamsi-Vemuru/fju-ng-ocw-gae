@@ -16,30 +16,6 @@
   </style>
 </head>
 <body >
-  <!-- <div class="fjutoolbar">
-    <md-content style="overflow: visible">
-      <md-toolbar>
-        <div class="md-toolbar-tools">
-          <div flex="10">
-            <img id="logo" src="img/fju-logo.png">
-          </div>
-          <h2>
-            <span id="header">Franklin Jefferson University</span>
-          </h2>
-          <span flex=""></span>
-          <md-button>
-            Get to know FJU
-          </md-button>
-          <md-button>
-            Learning at FJU
-          </md-button>
-          <md-button>
-            FJU Courses
-          </md-button>
-        </div>
-      </md-toolbar>
-    </md-content>
-  </div> -->
   {% block content %}
     {% include "header.html" %}
   {% endblock %}
@@ -53,58 +29,7 @@
             <p align="left">The Master of Science in Software Development program is designed to provide an immersive learn by doing experience for students who aspire to take up roles in fast-paced software companies and tech startups. The curriculum begins with an introduction to programming, object oriented programming and databases as the foundation courses. Students then prepared to develop software for the Internet and Android devices. In addition students apply their skills and professional software development practices on real customer projects to attain a mastery in the field.</p>
           </span>
         </md-content>
-      </md-card>
-
-      <!-- <div layout="row">
-        <md-card flex="33">
-          <md-content class="md-padding" ng-controller="foundationCoursesCtrl as fndnctrl">
-            <span class="md-title">Foundation Courses</span>
-            <md-content>
-              <md-list>
-                <md-list-item class="md-1-line" ng-repeat="course in fndnctrl.courses">
-                  <div class="md-list-item-text">
-                    <span class="md-subhead"><p>{[{ course.coursename }]}</p></span>
-                  </div>
-                  <md-divider ng-if="!$last"></md-divider>
-                </md-list-item>
-              </md-list> 
-            </md-content>
-            </span>
-          </md-content>          
-        </md-card>
-        <md-card flex="33">
-          <md-content class="md-padding" ng-controller="breadthCoursesCtrl as brctrl">
-            <span class="md-title">Breadth Courses</span>
-            <md-content>
-              <md-list>
-                <md-list-item class="md-1-line" ng-repeat="course in brctrl.courses">
-                  <div class="md-list-item-text">
-                    <span class="md-subhead"><p>{[{ course.coursename }]}</p></span>
-                  </div>
-                  <md-divider ng-if="!$last"></md-divider>
-                </md-list-item>
-              </md-list> 
-            </md-content>
-          </md-content>
-        </md-card> 
-        <md-card flex="33">
-          <md-content class="md-padding" ng-controller="specializationsCtrl as splctrl">
-            <span class="md-title">Specializations</span>
-            <md-content>
-              <md-list>
-                <md-list-item class="md-1-line" ng-repeat="course in splctrl.courses">
-                  <div class="md-list-item-text">
-                    <span class="md-subhead"><p>{[{ course.coursename }]}</p></span>
-                  </div>
-                  <md-divider ng-if="!$last"></md-divider>
-                </md-list-item>
-              </md-list> 
-            </md-content> 
-          </md-content>
-        </md-card>
-      </div>
-       -->
-      
+      </md-card>      
       <div layout="row">
         <md-card flex="33">
           <md-content class="md-padding" ng-controller="courseReqCtrl as reqctrl">
