@@ -1,0 +1,237 @@
+<html lang="en" >
+<head>
+  <title>Franklin Jefferson University</title>
+  <link rel="stylesheet" href="https://cdn.gitcdn.xyz/cdn/angular/bower-material/v1.0.0/angular-material.css">
+  <link href='https://fonts.googleapis.com/css?family=Italianno' rel='stylesheet' type='text/css'>
+  <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <style type="text/css">
+    /**
+      * Hide when Angular is not yet loaded and initialized
+    */
+    [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+      display: none !important;
+    }
+  </style>
+</head>
+<body ng-app="BlankApp" ng-cloak>
+  {% block content %}
+    {% include "header.html" %}
+  {% endblock %}
+<div ng-controller="DemoCtrl" class="md-padding"  ng-cloak >
+  <md-content layout-padding layout="column"  layout-align="center">
+    <md-card>
+      <form name="userForm" >
+        <span>Personal Information</span><hr/>
+          <div layout-gt-sm="row">
+            <md-input-container flex="">
+              <label>First Name</label>
+              <input name="firstName" ng-model="firstName" required  minlength="4">
+              <div md-auto-hide="false" ng-messages="userForm.firstName.$error" ng-show="userForm.firstName.$dirty">
+                <div ng-message="required">This is required!</div>
+                <div ng-message="md-maxlength">That's too long!</div>
+                <div ng-message="minlength">That's too short!</div>
+              </div>
+            </md-input-container>
+            <md-input-container flex="">
+              <label>Middle Name</label>
+              <input name="middlename" ng-model="middlename" required minlength="4">
+              <div md-auto-hide="false" ng-messages="userForm.middlename.$error" ng-show="userForm.middlename.$dirty">
+                <div ng-message="required">This is required!</div>
+                <div ng-message="md-maxlength">That's too long!</div>
+                <div ng-message="minlength">That's too short!</div>
+              </div>
+            </md-input-container>
+            <md-input-container flex="">
+              <label>Last Name</label>
+              <input name="lastName" ng-model="lastName" required minlength="4">
+              <div ng-messages="userForm.lastName.$error" ng-show="userForm.lastName.$dirty">
+                <div ng-message="required">This is required!</div>
+                <div ng-message="md-maxlength">That's too long!</div>
+                <div ng-message="minlength">That's too short!</div>
+              </div>
+            </md-input-container>
+          </div>
+          <div layout-gt-sm="row">
+            
+              <span>Gender</span>
+              <md-input-container flex="">
+                  <md-radio-group ng-model="user.gender" layout="row">
+                    <md-radio-button value="male" class="md-primary">male</md-radio-button>
+                    <md-radio-button value="female"> female </md-radio-button>
+                  </md-radio-group>
+              </md-input-container>
+                        <!-- <label>Date Of Birth</label> -->
+            <md-datepicker flex=""  ng-model="myDate" md-placeholder="Date Of Birth"></md-datepicker>
+          
+          </div>
+          
+          <div layout-gt-sm="row" >
+            <div flex="">
+              <md-input-container  md-no-float class="md-block">
+                <input ng-model="user.phone" type="text" placeholder="Phone Number">
+              </md-input-container>
+            </div>
+          </div>
+          <div layout-gt-sm="row" >
+            <div flex="">
+              <md-input-container md-no-float class="md-block">
+                <input ng-model="user.skype" type="text" placeholder="Skype Id">
+              </md-input-container>
+            </div>
+          </div>
+          <div layout-gt-sm="row">
+              <md-input-container md-no-float flex="">
+                <input ng-model="user.countryofbirth" type="text" placeholder="Contry Of Birth">
+              </md-input-container>
+              <md-input-container md-no-float  flex="">
+                <input ng-model="user.cityofbirth" type="text" placeholder="City Of Birth">
+              </md-input-container>
+              <md-input-container md-no-float flex="">
+                <input ng-model="user.citizenship" type="text" placeholder="Citizenship">
+              </md-input-container>
+          </div>    
+          <span>Education</span><hr>       
+          <div layout-gt-sm="row" flex>
+            
+              
+            
+              <md-input-container md-no-float flex="">
+                <input ng-model="user.school" type="text" placeholder="School Name">
+              </md-input-container>
+              <div flex="">
+                <!-- <label>Date Of Birth</label> -->
+                <md-datepicker flex="" ng-model="myDate" md-placeholder="Date Of Graduation"></md-datepicker>
+              </div>
+          </div>
+          <div layout-gt-sm="row" flex="">
+            <md-input-container md-no-float class="md-block" flex="">
+              <input ng-model="user.classrank" type="number" placeholder="Class Rank">
+            </md-input-container>
+            <md-input-container md-no-float class="md-block" flex="">
+              <input ng-model="user.classsize" type="number" placeholder="Grad Class Size">
+            </md-input-container>
+            <md-input-container md-no-float class="md-block" flex="">
+              <input ng-model="user.gpa" type="number" placeholder="Cumulative GPA">
+            </md-input-container>
+            <md-input-container  flex="">
+              <label>GPA Scale</label>
+              <md-select ng-model="gpaScale">
+                <md-option ng-value="4" >4</md-option>
+                <md-option ng-value="10" >10</md-option>
+              </md-select>
+            </md-input-container>
+          </div>
+          <div layout-gt-sm="row">  
+            <div flex="">
+              <span>TOEFL</span><hr/>
+              <md-input-container  class="md-block">
+                <input ng-model="user.toeflReading" type="text" placeholder="Reading">
+              </md-input-container>
+              <md-input-container  class="md-block">
+                <input ng-model="user.toeflWriting" type="text" placeholder="Writing">
+              </md-input-container>
+              <md-input-container  class="md-block">
+                <input ng-model="user.toeflListening" type="text" placeholder="Listening">
+              </md-input-container>
+              <md-input-container  class="md-block">
+                <input ng-model="user.toeflSpeaking" type="text" placeholder="Speaking">
+              </md-input-container>
+            </div>
+          
+            <div flex="">
+              <span>SAT</span><hr/>
+              <md-input-container  class="md-block">
+                <input ng-model="user.satReading" type="text" placeholder="Critical Reading">
+              </md-input-container>
+              <md-input-container  class="md-block">
+                <input ng-model="user.satWriting" type="text" placeholder="Writing">
+              </md-input-container>
+              <md-input-container  class="md-block">
+                <input ng-model="user.satAnalyticalReasoning" type="text" placeholder="Analytical Reasoning">
+              </md-input-container>
+            </div>
+            <div flex="">
+              <span>ACT</span><hr/>
+                  <md-input-container  class="md-block">
+                    <input ng-model="user.actEnglish" type="text" placeholder="English">
+                  </md-input-container>
+                  <md-input-container  class="md-block">
+                    <input ng-model="user.actAnalyticalReasoning" type="text" placeholder="Analytical Reasoning">
+                  </md-input-container>
+                  <md-input-container  class="md-block">
+                    <input ng-model="user.actReading" type="text" placeholder="Reading">
+                  </md-input-container>
+                  <md-input-container  class="md-block">
+                    <input ng-model="user.actReasoning" type="text" placeholder="Reasoning">
+                  </md-input-container>
+            </div>
+          </div>
+            <div layout-lt-sm="row">
+              <span>Address</span><hr/>
+              <md-input-container class="md-block">
+                <label>Address</label>
+                <input ng-model="user.address">
+              </md-input-container>
+            <md-input-container md-no-float class="md-block">
+              <input ng-model="user.address2" placeholder="Address 2">
+            </md-input-container>
+            <div layout-gt-sm="row">
+              <md-input-container class="md-block" flex-gt-sm>
+                <label>City</label>
+                <input ng-model="user.city">
+              </md-input-container>
+              <md-input-container class="md-block" flex-gt-sm>
+                <label>State</label>
+                <input ng-model="user.city">
+              </md-input-container>
+              <md-input-container class="md-block" flex-gt-sm>
+                <label>Postal Code</label>
+                <input name="postalCode" ng-model="user.postalCode" placeholder="12345"
+                       required ng-pattern="/^[0-9]{5}$/" md-maxlength="5">
+                <div ng-messages="userForm.postalCode.$error" role="alert" multiple>
+                  <div ng-message="required" class="my-message">You must supply a postal code.</div>
+                  <div ng-message="pattern" class="my-message">That doesn't look like a valid postal
+                    code.
+                  </div>
+                  <div ng-message="md-maxlength" class="my-message">
+                    Don't use the long version silly...we don't need to be that specific...
+                  </div>
+                </div>
+              </md-input-container>
+            </div>
+
+          </div>
+      
+      </form>
+    </md-card>
+  </md-content>
+</div> 
+
+
+  <!-- Angular Material requires Angular.js Libraries -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+
+  <!-- Angular Material Library -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+  
+  <!-- Your application bootstrap  -->
+  <script type="text/javascript">    
+    /**
+     * You must include the dependency on 'ngMaterial' 
+     */
+    var app = angular.module('BlankApp', ['ngMaterial', 'ngMessages']);
+    app.controller('DemoCtrl', function($scope) {
+      $scope.userFormSubmit = function(){
+        alert('oj');
+      };
+
+    });
+
+  </script>
+  
+</body>
+</html>
